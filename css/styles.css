@@ -3,6 +3,7 @@
     --title-text-color: #2E2F42;
     --button: #4D5AE5;
     --background-color: #F4F4FD;
+    --line-color: #E7E9FC;
     
 
 }
@@ -16,19 +17,9 @@ body {
     line-height: 1.5;
 }
 
-.container {
- 
-}
-
-
-.container-address {
-   
-
-}
-
 .page-header {
-    
-    
+    border-bottom: 1px solid var(--line-color);
+      
 }
 
 .logo {
@@ -44,27 +35,65 @@ body {
 }
 
 .site-nav,
-.auth-site,
+.auth-nav,
 .features,
 .work-list,
 .team {
     list-style: none;
     padding: 0;
-    margin: 0;
-    
+    margin: 0;    
+}
+
+/*main-nav*/
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+
 }
 
 /*site nav*/
+.site-nav {
+    display: flex;
+    margin-left: 76px;
+}
+
+.site-nav .item + .item {
+    margin-left: 40px;
+}
+
+
 .site-nav .link {
+    display: block;
+    padding-top: 24px;
+    padding-bottom: 24px;
     color: var(--title-text-color);
     text-decoration: none;
     font-weight: 500;
+    
 }
 
-.auth-site .link {
+.auth-nav {
+    display: flex;
+}
+
+.auth-nav .link {
+   
     color: var(--accent-color);
     text-decoration: none;
     font-style: normal;
+
+}
+
+.auth-nav .auth + .auth {
+    margin-left: 40px;
 }
 
 .link:hover,
@@ -73,37 +102,50 @@ body {
     
 }
 
+address {
+    margin-left: auto;
+}
 
 /*hero*/
+
 .hero {
     background-color: var(--title-text-color);
     text-align: center;
 }
 
 .hero-title {
+    margin-top: 0;
+    margin-bottom: 48px;
+    padding-top: 188px;
     font-weight: 700;
     line-height: 1.07;
     font-size: 56px;
     color: white;
     font-family: inherit;
     initial-letter: inherit;
-    margin-top: 0;
-    margin-bottom: 48px;
-    padding-top: 188px;
+   
 }
 
-/*section1*/
+
+/*features*/
+
+.section {
+    padding-top: 120px;
+}
 
 .section-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 72px;
+    padding-top: 88px;
+    text-align: center;
     color: var(--title-text-color);
     font-family: inherit;
     font-weight: 700;
     font-size: 36px;
     line-height: 1.12;
-    margin-top: 0;
-    padding-bottom: 72px;
-    
-}
+}   
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -117,55 +159,103 @@ body {
     overflow: hidden;
 }
 
-.container-features {
-    padding-top: 120px;
-    margin-bottom: 120px;
+.features {
+    display: flex;
+}
+
+.features >li {
+    width: 264px;
+}
+
+.features >li:not(:last-child) {
+    margin-right: 24px;
 }
 
 .team-header,
 .feature-header {
+    margin-top: 0;
+    margin-bottom: 8px;
+    padding-top: 32px;
     color: var(--title-text-color) ;  
     font-family: inherit;
     font-size: 20px;
     font-weight: 500;
     line-height: 1.2;
-    margin-top: 0;
-    margin-bottom: 8px;
-
 }
 .desc {
-    color: var(--accent-color);
     margin-top: 0;
     margin-bottom: 0;
-    
+    padding-bottom: 32px;
+    color: var(--accent-color); 
 }
 
-.section {
+.team .desc {
+    text-align: center;
+}
+
+/*work-list*/
+
+.section-two {
     margin-top: 0;
     margin-bottom: 0;
-   
+    padding-bottom: 120px;   
+}
+
+.work-list {
+    display: flex;
+   justify-content: space-between;
+}
+
+.work-list >li:not(:last-child) {
+   margin-right: 24px;
+}
+
+/*team*/
+
+.section-team .section-title {
+    padding-top: 120px;
+
+}
+
+.section-team .team-header {
+    text-align: center;
 }
 
 .section-team {
+    padding-bottom: 120px;
     background-color: var(--background-color);
 }
 
+.team {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.team > li {
+    background: white;
+}
+
+.team >li:not(:last-child) {
+    margin-right: 24px;
+}
 /*button*/
 
 .order-button {
+    margin-bottom: 188px;
+    padding: 16px 32px;
+
     color: white;
     background-color: var(--button);
     border-radius: 4px;
     font-size: 16px;
     line-height: 1.5px;
-    padding: 16px 32px;
     border: none;
     font-family: inherit;
     letter-spacing: 0.04em;
     font-weight: 500;
     cursor: pointer;
     text-align: center;
-    margin-bottom: 188px;
+    
    
 }
 
@@ -177,11 +267,16 @@ body {
 span {
     color: var(--button);
 }
+
 /*footer*/
+
 .footer-section {
     background-color: var(--title-text-color);
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 .footer-logo {
+
     color: var(--background-color);
     font-size: 18px;
     text-decoration: none;
@@ -193,10 +288,11 @@ span {
 }
 
 .slogan {
+    margin-bottom: 0;
+    width: 264px;
     color: #E7E9FC;
     font-family: inherit;
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 0;
+    line-height: 1.5;   
 }
