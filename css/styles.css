@@ -1,11 +1,14 @@
 :root {
     --accent-color: #434455 ;
     --title-text-color: #2E2F42;
-    --button: #4D5AE5;
+    --primary-band: #4D5AE5;
     --background-color: #F4F4FD;
     --line-color: #E7E9FC;
-    
-
+    --accent-color: #434455 ;
+    --title-text-color: #2E2F42;
+    --button: #E7E9FC;
+    --focus: #404BBF;
+    --bottom-line: #D9D9D9;
 }
 
 body {
@@ -18,8 +21,7 @@ body {
 }
 
 .page-header {
-    border-bottom: 1px solid var(--line-color);
-      
+    border-bottom: 1px solid var(--line-color);    
 }
 
 .logo {
@@ -32,6 +34,10 @@ body {
     text-transform: uppercase;
     font-weight: 800;
     
+}
+
+span {
+    color: var(--primary-band);
 }
 
 .site-nav,
@@ -56,18 +62,24 @@ body {
     width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
-
+    
 }
 
+.container-header {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;  
+}
 /*site nav*/
 .site-nav {
     display: flex;
-    margin-left: 76px;
+    padding-left: 76px;
 }
 
-.site-nav .item + .item {
-    margin-left: 40px;
-}
 
 
 .site-nav .link {
@@ -76,33 +88,37 @@ body {
     padding-bottom: 24px;
     color: var(--title-text-color);
     text-decoration: none;
-    font-weight: 500;
-    
+    font-weight: 500;   
 }
 
+.site-nav>li:not(:last-child) {
+    margin-right: 40px;
+}
 .auth-nav {
     display: flex;
+    align-items: center;
 }
 
 .auth-nav .link {
-   
     color: var(--accent-color);
     text-decoration: none;
     font-style: normal;
-
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
-.auth-nav .auth + .auth {
-    margin-left: 40px;
+
+
+.auth-nav>li:not(:last-child) {
+    margin-right: 40px;
 }
 
 .link:hover,
 .link:focus {
-    color:#4D5AE5;
-    
+    color:#4D5AE5;   
 }
 
-address {
+address{
     margin-left: auto;
 }
 
@@ -111,39 +127,49 @@ address {
 .hero {
     background-color: var(--title-text-color);
     text-align: center;
+    padding-top: 188px;
+    padding-bottom: 188px;
+    
 }
 
 .hero-title {
-    margin-top: 0;
-    margin-bottom: 48px;
-    padding-top: 188px;
+    margin: 0 auto 48px;
     font-weight: 700;
     line-height: 1.07;
     font-size: 56px;
     color: white;
     font-family: inherit;
     initial-letter: inherit;
+    width: 494px;
+
    
 }
 
 
 /*features*/
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
 .section {
     padding-top: 120px;
+    
 }
 
 .section-title {
     margin-top: 0;
-    margin-bottom: 0;
-    padding-bottom: 72px;
-    padding-top: 88px;
+    margin-bottom: 72px;
     text-align: center;
     color: var(--title-text-color);
     font-family: inherit;
     font-weight: 700;
     font-size: 36px;
     line-height: 1.12;
+    text-transform: capitalize;
 }   
 
 .visually-hidden {
@@ -175,7 +201,6 @@ address {
 .feature-header {
     margin-top: 0;
     margin-bottom: 8px;
-    padding-top: 32px;
     color: var(--title-text-color) ;  
     font-family: inherit;
     font-size: 20px;
@@ -185,7 +210,6 @@ address {
 .desc {
     margin-top: 0;
     margin-bottom: 0;
-    padding-bottom: 32px;
     color: var(--accent-color); 
 }
 
@@ -198,6 +222,7 @@ address {
 .section-two {
     margin-top: 0;
     margin-bottom: 0;
+    padding-top: 120px;
     padding-bottom: 120px;   
 }
 
@@ -212,16 +237,12 @@ address {
 
 /*team*/
 
-.section-team .section-title {
-    padding-top: 120px;
-
-}
-
 .section-team .team-header {
     text-align: center;
 }
 
 .section-team {
+    padding-top: 120px;
     padding-bottom: 120px;
     background-color: var(--background-color);
 }
@@ -238,17 +259,20 @@ address {
 .team >li:not(:last-child) {
     margin-right: 24px;
 }
+
+.team-block {
+    padding: 32px 16px;
+}
+
 /*button*/
 
 .order-button {
-    margin-bottom: 188px;
     padding: 16px 32px;
-
     color: white;
-    background-color: var(--button);
+    background-color: var(--primary-band);
     border-radius: 4px;
     font-size: 16px;
-    line-height: 1.5px;
+    line-height: 1.5;
     border: none;
     font-family: inherit;
     letter-spacing: 0.04em;
@@ -264,10 +288,6 @@ address {
     background-color: #404BBF;
 }
 
-span {
-    color: var(--button);
-}
-
 /*footer*/
 
 .footer-section {
@@ -276,7 +296,7 @@ span {
     padding-bottom: 100px;
 }
 .footer-logo {
-
+    margin-bottom: 16px;
     color: var(--background-color);
     font-size: 18px;
     text-decoration: none;
@@ -295,4 +315,136 @@ span {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;   
+}
+
+/*-----------portfolio-------------*/
+
+/*filters*/
+
+.filters-section {
+    display: flex; 
+    padding-top: 72px;
+    padding-bottom: 42px; 
+}
+
+
+.filters {
+    margin-bottom: 0;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    padding-bottom: 42px;
+}
+
+.filters > li:not(:last-child) {
+    margin-right: 24px;
+
+}
+
+.filters >li:last-child {
+    margin-bottom: 72px;
+    
+}
+
+
+button {
+    color: #4D5AE5;
+    background-color: var(--background-color);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 12px 24px;
+    border: none;
+    font-family: inherit;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover,
+button:focus {
+    background-color: var(--focus);
+    color: white;
+    border-color: var(--line-color);
+}
+
+button:hover {
+     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1) , 
+     0 2px 2px rgba(0, 0, 0, 0.12);   
+}
+
+
+/*pic-list*/
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+.site-nav,
+.auth-nav,
+.filters,
+.pic-list {
+    list-style: none;
+}
+
+.header-desc {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: var(--title-text-color);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.desc {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--accent-color);  
+}
+
+.pic-list{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    column-gap: 24px;
+}
+
+.pic-element {
+    width: 360px;
+
+}
+
+.pic-element:nth-child(3n) {
+    margin-right: 0;
+}
+
+.pic-block {
+    border: 1px solid var(--line-color);
+    border-top: 0;
+    padding: 32px 16px;
+}
+
+.pic-element:nth-last-child( - n + 3) {
+    margin-bottom: 0;
 }
